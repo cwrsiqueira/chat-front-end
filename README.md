@@ -17,3 +17,12 @@ Acessar o diretório do projeto
 
 Rodar o projeto
 ### npm start
+
+Comunicação web em tempo real - Cliente
+### npm install socket.io-client
+
+Transforma o CSS em componentes
+with npm
+### npm install --save styled-components
+with yarn
+### yarn add styled-components
