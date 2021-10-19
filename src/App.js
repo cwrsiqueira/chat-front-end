@@ -24,6 +24,9 @@ import {
   EnviarMsg,
   CampoMsg,
   ButtonEnviarMsg,
+  Sala,
+  Termos,
+  Termos_title,
 } from './styles/styles';
 
 let socket;
@@ -71,7 +74,7 @@ function App() {
     <Container>
       {!logado ? 
         <Conteudo>
-          <Header>Meu Chat...</Header>
+          <Header>TS - Then Speak</Header>
           <Form>
             <Campo>
               <Label>Nome: </Label>
@@ -80,23 +83,33 @@ function App() {
             
             <Campo>
               <Label>Sala: </Label>
-              <Select name="sala" onChange={(t) => {setSala(t.target.value)}}>
+              <Sala name='sala' onKeyUp={(t) => {setSala(t.target.value)}} />
+              {/* <Select name="sala" onChange={(t) => {setSala(t.target.value)}}>
                 <option value="">Selecione</option>
                 <option value="1">Node.js</option>
                 <option value="2">React.js</option>
                 <option value="3">React Native</option>
                 <option value="4">PHP</option>
-              </Select>
+              </Select> */}
             </Campo>
 
             <Button onClick={conectarSala}>Acessar</Button>
           </Form>
+          <Termos_title>Atenção! Leia antes de acessar o chat. <br/> Ao acessar você concorda com os termos abaixo.</Termos_title>
+          <Termos>
+            <li>Esse chat não tem qualquer tipo de criptografia. Cuidado ao enviar informações sigilosas no chat.</li>
+            <li>Esse chat não salva mensagens, depois de sair é impossível recuperar as mensagens.</li>
+            <li>Isso não impede prints das imagens do chat</li>
+            <li>Ao acessar o chat você concorda com estes termos e isenta o desenvolvedor de qualquer dano, de qualquer natureza.</li>
+            <li>Você declara também, ao acessoar, que é maior de 18 anos e é totalmente responsável por seus atos no chat.</li>
+            <li>Não aceitamos qualquer discurso de ódio, fakenews ou discriminação de qualquer natureza, caso tenha alguma denúncia denuncie nos fórums legais.</li>
+          </Termos>
         </Conteudo>
       : 
         <ConteudoChat>
           <HeaderChat>
             <ImgUsuario src="avatar.jpg" alt={nome} />
-            <NomeUsuario>{nome}</NomeUsuario>
+            <NomeUsuario> {sala} - {nome} - <a href="/">Sair</a> </NomeUsuario>
           </HeaderChat>
           <ChatBox>
           {listaMensagem.map((msg, key) => {

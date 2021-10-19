@@ -57,6 +57,15 @@ export const Select = styled.select`
     border: 1px solid #ccc;
 `;
 
+export const Sala = styled.input`
+    height: 40px;
+    width: 390px;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+`;
+
 export const Button = styled.button`
     border: none;
     background: #6fbced;
@@ -173,4 +182,14 @@ export const ButtonEnviarMsg = styled.button`
     font-size: 19px;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
+`;
+
+export const Termos_title = styled.span`
+    color: red;
+`;
+
+export const Termos = styled.ul`
+    color: #555;
+    font-size: 14px;
+    margin-top: 20px;
 `;
